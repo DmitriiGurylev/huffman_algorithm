@@ -76,10 +76,8 @@ class Ui_main_window(object):
         home_dir = str(Path.home())
         fname = QFileDialog.getOpenFileName(main_window, 'Open file', home_dir)
         if fname[0]:
-            f = open(fname[0], 'r')
-            with f:
-                data = f.read()
-                self.textEdit.setText(data)
+            self.input_file_field.setPlainText(fname[0])
+            self.output_file_field.setPlainText(fname[0]+'.huff')
 
 
 if __name__ == "__main__":
